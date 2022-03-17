@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head lang="fr">
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Documentation inofficielle de Logisim Evolution</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="../resources/images/logo.png" width="150">
+                    Documentation inofficielle de Logisim Evolution
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/logisim-evolution/logisim-evolution">
+                                Github officiel
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/MaelImhof/logisim-doc">
+                                Contribuer à la doc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid jumbotron">
+            <div class="row padding">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="../">Langages</a></li>
+                          <li class="breadcrumb-item"><a href="index.html">Français</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Démarrer le projet</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="row padding">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h1 class="display-1 bold">
+                        Démarrer le TP3/4
+                    </h1>
+                    <p>
+                        Cette section concerne plus le TP3/4 en lui-même que Logisim. Si tu cherches des tips Logisim, tu en trouveras sur <a href="logisim.html">cette page</a>.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    
+                </div>
+            </div>
+            <div class="row padding">
+                <div class="col-md-4 col-lg-3">
+                    <div id="content" class="list-group position-sticky">
+                        <a class="list-group-item list-group-item-action" href="#download">Télécharger Logisim</a>
+                        <a class="list-group-item list-group-item-action" href="#template">Template du projet</a>
+                        <a class="list-group-item list-group-item-action" href="#rendu">Rendre son projet</a>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                    <div data-spy="scroll" data-target="#content" data-offset="0" class="scrollspy-example">
+                        <h4 id="download">Télécharger Logisim</h4>
+                        <p>
+                            Des instructions plus précises pour télécharger Logisim sont disponibles sur le <a href="https://moodle.epfl.ch">Moodle</a>
+                        </p>
+                        <p>
+                            Logisim est un logiciel libre disponible librement sur Github. En classe, on utilise la dernière version : 3.7.2
+                        </p>
+                        <a type="button" class="btn btn-primary btn-lg btn-block mb-4" href="https://github.com/logisim-evolution/logisim-evolution/releases/tag/v3.7.2">
+                            Télécharger Logisim
+                        </a>
+                        
+                        <hr />
+                        <h4 id="template">Template du projet</h4>
+                        <p>
+                            On ne <strong>doit pas</strong> faire le TP <em>from scratch</em>. Un modèle nous est donnée, on doit commencer par là.
+                        </p>
+                        <p>
+                            Tu peux télécharger le TP depuis le <a href="https://moodle.epfl.ch">Moodle</a> ou par <a href="../resources/documents/tp34-template.circ" download="tp34.circ">ce lien (il est sécure mais si tu préfères go Moodle)</a>.
+                        </p>
+                        <p>
+                            Depuis Moodle, le lien n'est pas un lien de téléchargement. Tu le trouveras tout en bas de la semaine actuelle :
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/moodle-tp-link.png" alt="[Il devrait y avoir une image ici...]">
+                        <P>
+                            En cliquant sur ce lien, ton navigateur chargera directement le texte sauvegardé dans le fichier. Pas de panique, il suffit de faire un <strong>clic droit</strong> puis de choisir "Enregistrer sous..."
+                        </P>
+                        <img class="img-thumbnail rounded" src="../resources/images/logisim-xml.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Attention à bien sauvegarder le fichier en .circ pour l'ouvrir avec Logisim simplement!
+                        </p>
+                        <a type="button" class="btn btn-primary btn-lg btn-block mb-4" href="../resources/documents/tp34-template.circ" download="tp34.circ">
+                            Télécharger le template
+                        </a>
+
+                        <hr />
+                        <h4 id="rendu">Rendre son projet</h4>
+                        <p>
+                            Pour rendre le projet, rends-toi sur le <a href="https://digsys.epfl.ch/">site de rendu</a>. Il faudra te connecter au VPN de l'EPFL (<a href="https://www.epfl.ch/campus/services/ressources-informatiques/network-services-reseau/acces-intranet-a-distance/clients-vpn-disponibles/">voir les différentes possibilités ici</a>).
+                        </p>
+                        <div class="alert alert-warning" role="alert">
+                            Attention, tu n'as droit à rendre ton projet que 10 fois! Seul le dernier rendu sera pris en compte. GL!
+                        </div>
+                        <a type="button" class="btn btn-primary btn-lg btn-block mb-4" href="https://www.epfl.ch/campus/services/ressources-informatiques/network-services-reseau/acces-intranet-a-distance/clients-vpn-disponibles/">
+                            Installer le VPN
+                        </a>
+                    </div>
+
+                    <a type="button" class="btn btn-success btn-lg btn-block mb-4" href="logisim.html">
+                        Page suivante : Tips Logisim
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head lang="fr">
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Documentation inofficielle de Logisim Evolution</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <img src="../resources/images/logo.png" width="150">
+                    Documentation inofficielle de Logisim Evolution
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/logisim-evolution/logisim-evolution">
+                                Github officiel
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/MaelImhof/logisim-doc">
+                                Contribuer à la doc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid jumbotron">
+            <div class="row padding">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="../">Langages</a></li>
+                          <li class="breadcrumb-item"><a href="index.html">Français</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Tips Logisim</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="row padding">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h1 class="display-1 bold">
+                        Tips Logisim
+                    </h1>
+                </div>
+                <div class="col-lg-4">
+                    
+                </div>
+            </div>
+            <div class="row padding">
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <div id="content" class="list-group" style="position: -webkit-sticky; position: sticky; top:0;">
+                        <a class="list-group-item list-group-item-action" href="#inputs">Entrées multiples</a>
+                        <a class="list-group-item list-group-item-action" href="#cables">Organiser ses câbles</a>
+                        <a class="list-group-item list-group-item-action" href="#splitters">Le splitter, notre sauveur</a>
+                        <a class="list-group-item list-group-item-action" href="#circuit-generation">Générer automatiquement des circuits</a>
+                        <a class="list-group-item list-group-item-action" href="#clocks">Activer/Désactiver les clocks</a>
+                        <a class="list-group-item list-group-item-action" href="#create-subcircuit">Créer un sous-circuit</a>
+                        <a class="list-group-item list-group-item-action" href="#edit-circuits">Modifier des (sous-)circuits</a>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-9">
+                    <div style="height: 100%; overflow: scroll;">
+                    <div data-spy="scroll" data-target="#content" data-offset="0" class="scrollspy-example">
+                        <h4 id="inputs">Entrées multiples</h4>
+                        <p>
+                            Dans la catégorie des tips "mais comment j'ai fait avant de savoir ça?", savais-tu que tu peux avoir une porte AND avec 4 inputs? Et elle donne vrai seulement quand les 4 inputs sont vrais? Au lieu de faire 3 portes AND?
+                        </p>
+                        <p>
+                            Si tu savais déjà, tant mieux, mais maintenant tu le sais!
+                        </p>
+                        <p>
+                            Il te suffit pour cela de sélectionner une porte (clique dessus et ce sera sélectionné normalement), puis de regarder ses propriétés en bas à gauche :
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/12-inputs-and-gate.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Modifie la propriété "Number of inputs" selon ta volonté (ci-dessus, c'est de l'abus, mais ça marche).
+                        </p>
+                        <p>
+                            De manière générale, regarde dans les propriétés des objets, tu verras y a plein de possibilités, pas seulement ça!
+                        </p>
+
+                        <hr />
+                        <h4 id="cables">Organiser ses câbles</h4>
+                        <p>
+                            Tes câbles sont sens dessus-dessous? Ça devient vite un chenis pas possible, et les sous-circuits sont une solutions à ça (voir <a href="#create-subcircuit">plus bas</a>), mais avant cette solution tu peux simplement ranger un peu tes câbles.
+                        </p>
+                        <p>
+                            Comment? En regardant les corrigés, j'ai découvert cette technique assez intéressante des "bus" de câbles. En gros, tous tes câbles sont sur une autoroute, et tu tires un câble secondaire depuis cette autoroute quand tu en as besoin. C'est plus simple à faire et à lire!
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/bus-circuit.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Franchement, il est pas clean ce circuit?
+                        </p>
+
+                        <hr />
+                        <h4 id="splitters">Le splitter, notre sauveur</h4>
+                        <p>
+                            Dans les circuits du TP, tu devras travailler avec des inputs de plus de 1 bit (tu peux faire ça dans les propriétés de ton input) :
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/many-bits-input.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Comment travailler avec ces inputs? Pour des portes simples comme AND, etc, tu peux modifier la taille des inputs de la porte dans ses propriétés (attention au comportement de la porte à ce moment), mais parfois on veut des opérations plus complexes. Comment?
+                        </p>
+                        <p>
+                            La réponse est simple : on utilise les splitters. Comme leur nom l'indique, les splitters séparent les bits de l'input de la manière désirée :
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/splitter-examples.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Note qu'on peut séparer comme on veut. Je peux prendre les bits 0-3 dans un output et les 4-7 dans un deuxième, ou prendre les bits 3 et 5 dans un output et le reste dans l'autre. Je peux avoir 3 outputs, tout est possible.
+                        </p>
+                        <p>
+                            Comment gérer ça? Dans les propriétés!! Eh oui! Examinons les différentes propriétés du splitter :
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/splitter-properties.png" alt="[Il devrait y avoir une image ici...]">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Facing</th>
+                                    <td>Cosmétique, peut aussi être utile pour placer tes fils de façon optimale. Il est assez intuitif, il indique où vont pointer les petits fils du splitter.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Fan Out</th>
+                                    <td>Indique combien de petits fils partent du splitter. Les fils "non-utilisés" seront grisés mais existeront. Cet attribut n'indique pas la répartition des bits sur les fils, ça c'est plus loin.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bit Width In</th>
+                                    <td>Indique la taille de l'input, c'est à dire du côté "gros inputs", combien de bits le splitter va recevoir. Dans l'exemple, notre input est de 8bits, donc c'est 8.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Appearance</th>
+                                    <td>Cosémtique, peut être utile encore une fois pour organiser ses fils et garder son circuit lisible, difficile de décrire son effet mais teste, ça change juste l'orientation du splitter.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Spacing</th>
+                                    <td>À combien de "petits points" de la grille Logisim les inputs seront les uns des autres. Par défaut, la valeur est 1, c'est à dire qu'il n'y a pas d'espace entre les fils. Mais tu peux vouloir un ou deux points d'espace.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bit i</th>
+                                    <td>Indique dans quel fil sortira le ième bit. C'est là que tu choisis vraiment quels bits tu veux extraire et comment.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            De même qu'il est possible de séparer un input en plusieurs outputs, il est possible de rassembler plusieurs inputs en un output, toujours avec le splitter, juste dans l'autre sens (rien à changer dans les propriétés) :
+                        </p>
+                        <img class="img-thumbnail rounded mb-4" src="../resources/images/reassembler-example.png" alt="[Il devrait y avoir une image ici...]">
+
+                        <hr />
+                        <h4 id="circuit-generation">Générer automatiquement des circuits</h4>
+                        <p>Je vais pas refaire la docu ici, juste dire que nous disposons d'une vidéo expliquant comment, à partir d'une truth table ou d'une expression logique, créer un circuit automatiquement grâce à Logisim</p>
+                        <p><a href="https://moodle.epfl.ch/pluginfile.php/2892576/mod_resource/content/1/LogisimCombinationalAnalysys.mp4">Accéder à la vidéo (il faut que tu sois connecté(e))</a></p>
+
+                        <hr />
+                        <h4 id="clocks">Activer/Désactiver les clocks</h4>
+                        <p>
+                            Voir des clocks clignoter pendant que tu travailles peut être une source de déconcentration (c'est pas un problème de riche ok?), heureusement tu peux mettre la simulation en pause pour les arrêter temporairement :
+                        
+                        </p>
+                        <img class="img-thumbnail rounded mb-4" src="../resources/images/pause-simulation.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Inversément, si ta clock ne fonctionne pas, c'est sûrement que ta simulation est en pause
+                        </p>
+
+                        <hr />
+                        <h4 id="create-subcircuit">Créer un sous-circuit</h4>
+                        <p>
+                            Le DSD, c'est un peu comme la prog. Quand ton code devient trop long ou que tu refais la même chose plusieurs fois, tu divises le code en différentes fonctions plus petites que tu utilises peut-être plusieurs fois, pour éviter le code redondant.
+                        </p>
+                        <p>
+                            En DSD, c'est pareil, pour simplifier ton circuit, tu vas créer des parties de circuit que tu peux réutiliser partout dans ton circuit.
+                        </p>
+                        <p>
+                            Pour ce faire, rends-toi dans l'onglet Design et clique sur l'icône de +, puis donne un nom à ton nouveau circuit.
+                        </p>
+                        <img class="img-thumbnail rounded" src="../resources/images/add-circuit.png" alt="[Il devrait y avoir une image ici...]">
+                        <p>
+                            Ton nouveau circuit apparaîtra dans l'onglet Design, tu pourras l'utiliser depuis ici comme n'importe quel autre composant
+                        </p>
+
+                        <hr />
+                        <h4 id="edit-circuits">Modifier des (sous-)circuits</h4>
+                        <p>
+                            Une fois tes sous-circuits créés, pour switcher entre eux, rien de plus simple! Il te suffit de double-cliquer sur le nom du circuit que tu veux ouvrir dans l'onglet Design. Le circuit s'ouvrira.
+                        </p>
+                        <img class="img-thumbnail rounded mb-4" src="../resources/images/open-circuit.png" alt="[Il devrait y avoir une image ici...]">
+                        <div class="alert alert-info" role="alert">
+                            Une petite loupe (voir ci-dessus) apparaît sur le circuit actuellement ouvert
+                        </div>
+                        <div class="alert alert-warning">
+                            Attention! Clique bien sur le nom et pas sur l'espace blanc à côté, sinon le circuit ne s'ouvrira pas (choix des développeurs, je sais pas c'est comme ça)
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
